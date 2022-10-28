@@ -1,0 +1,142 @@
+<!-- <div classNameName="container">
+    <div className="container-xxl">
+       <div className="row mt-5 product-container">
+           <div className="col-md-6">
+               <div className="images">
+                   <div className="text-center mb-4"><img alt="model" id="main-image" src={product_img_1}/></div>
+                       <div className="text-center"> <img alt="model"  className="sec-image" onmouseover="change_image(this)" src={product_img_1}> 
+                                                     <img alt="model"  className="sec-image" onmouseover="change_image(this)" src={product_img_2}>
+                       </div>
+               </div>
+           </div>
+
+           <div className="col-2 w-50">
+               <h1>Modern Black Blouse</h1>
+               <h3 className="text-uppercase">SKU: 12345670 BRAND: The Northland</h3>
+               <div className="product-rating mt-3">
+                   <i className="fa-solid fa-star"></i>
+                   <i className="fa-solid fa-star"></i>
+                   <i className="fa-solid fa-star"></i>
+                   <i className="fa-solid fa-star"></i>
+                   <i className="fa-solid fa-star"></i>
+               </div>
+               <h4 className="mt-3">$35.00</h4>
+               <p>Discovered had get considered projection who favourable. 
+                   Necessary up knowledge it tolerably. Unwilling departure education 
+                   is be dashwoods or an. Use off agreeable law unwilling sir 
+                   deficient curiosity instantly. <span id="dots">...</span><span id="more">Lorem enim ligula
+                   venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus 
+                   vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at 
+                   libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. 
+                   Integer fringilla congue eros non fermentum. Sed dapibus.</span>
+                   (<button href="#" onclick="toggleText()" className="readmore-btn">Read more</button>)
+               </p>
+               
+               <form>
+               
+                   <div className="product-input-container">
+                       <label className="label-product">Size: </label>
+                       <label className="product-input-size">
+                           <input type="radio" name="size"  value="S"  />
+                           <span className="product-input-size-text">S</span>
+                       </label>
+                       <label className="product-input-size">
+                           <input type="radio" name="size"  value="M" checked />
+                           <span className="product-input-size-text">M</span>
+                       </label>
+                       <label className="product-input-size">
+                           <input type="radio" name="size" value="L" />
+                           <span className="product-input-size-text">L</span>
+                       </label>
+                       <label className="product-input-size">
+                           <input type="radio" name="size"  value="XL" />
+                           <span className="product-input-size-text">XL</span>
+                       </label><br>
+                   </div>
+
+                   <div className="product-input-container">
+                       <label className="label-product" for="color">Color:</label>
+                       <select id="color">
+                           <option selected disabled>Choose a Color</option>
+                           <option>Black</option>
+                           <option>Off white</option>
+                           <option>Red</option>
+                       </select>
+                   </div>
+
+                   <div className="product-input-container">
+                       <label className="label-product" for="number">Qty:</label>
+                       <div className="product-input-qty-container d-flex justify-content-center">
+                           <input className="product-input-qty" id="qty" type="number" value="1" min="1" max="100"/>
+                           <div id="inc-button" onclick="buttonClickInc();" className="spinner-button"><i className="fa-solid fa-plus"></i></div>
+                           <div id="dec-button" onclick="buttonClickDec();" className="spinner-button"><i className="fa-solid fa-minus"></i></div>
+                       </div>
+                       <button className="button-product" type="submit">ADD TO CART</button>
+                   </div>
+                   
+                   <div className="product-input-container">
+                       <label className="label-product">Share:</label>
+                       <div className="product-share d-flex">
+                           <i className="fa-brands fa-facebook-f"></i>
+                           <i className="fa-brands fa-instagram"></i>
+                           <i className="fa-brands fa-google"></i>
+                           <i className="fa-brands fa-linkedin"></i>
+                           <i className="fa-brands fa-twitter"></i>
+                       </div>
+                   </div>
+               </div>
+           </form>
+       </div>
+   </div>
+
+
+   <div className="container-xxl">
+       <p>
+           <div className="colapse-container">
+               <a id="productColapse" className="product-colapse" onclick="toggleColapse(0)" data-bs-toggle="collapse" href="#Description" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Description
+               </a>
+               <a id="productColapse" className="product-colapse" onclick="toggleColapse(1)" data-bs-toggle="collapse" href="#Additional" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Additional
+               </a>
+               <a id="productColapse" className="product-colapse" onclick="toggleColapse(2)" data-bs-toggle="collapse" href="#Shopping" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Shopping & Returns
+               </a>
+               <a id="productColapse" className="product-colapse" onclick="toggleColapse(3)" data-bs-toggle="collapse" href="#Reviews" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Reviews
+               </a>
+           </div>
+       </p>
+       
+       <div className="collapse" id="Description">
+           <div className="card card-body">
+               <span>
+                   Way extensive and dejection get delivered deficient sincerity gentleman age. 
+                   Too end instrument possession contrasted motionless. Calling offence six joy feeling.
+                   Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery
+                       incommode earnestly no he commanded if. Put still any about manor heard.<br>
+                       * Village did removed enjoyed explain nor ham saw calling talking.<br>
+                       * Securing as informed declared or margaret.<br>
+                       * Joy horrible moreover man feelings own shy.<br>
+                       On even feet time have an no at. Relation so in confined smallest children unpacked delicate. 
+                       Why sir end believe uncivil respect. Always get adieus nature day course for common. My little 
+                       garret repair to desire he esteem. 
+               </span>
+           </div>    
+       </div>
+       <div className="collapse" id="Additional">
+           <div className="card card-body">
+               <span>Additional</span>
+           </div>
+       </div>
+       <div className="collapse" id="Shopping">
+           <div className="card card-body">
+               <span>Shopping & Returns</span>
+           </div>
+       </div>
+       <div className="collapse" id="Reviews">
+           <div className="card card-body">
+               <span>Reviews</span>
+           </div>
+       </div>
+   </div> -->
