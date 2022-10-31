@@ -27,7 +27,7 @@
 .featured-grid-item-8 { grid-area: 2 / 4 / 3 / 5; }
 
 
-    .featured-grid .featured-grid-item .featured-body{
+    .featured-body{
         background-color: var(--color-gray-1);
         height: 210px;
         position: relative;
@@ -36,11 +36,11 @@
         transition: all .2s;
     }
 
-    .featured-grid .featured-grid-item .featured-body:hover{
+    .featured-body:hover{
         background-color: rgba(26, 26, 26, 0.178);
     }
 
-    .featured-grid .featured-grid-item .featured-body .arrivals-menu{
+    .featured-body .arrivals-menu{
         list-style: none;
         z-index: 2;
         position: absolute;
@@ -50,11 +50,11 @@
         transition: all .2s ease-in-out;
     }
 
-    .featured-grid .featured-grid-item .featured-body:hover .arrivals-menu{
+    .featured-body:hover .arrivals-menu{
         right: 12px;
     }
 
-    .featured-grid .featured-grid-item .featured-body .arrivals-menu li{
+    .featured-body .arrivals-menu li{
         background-color: rgb(255, 255, 255);
         border-radius: 50px;
         box-shadow: 0px 0px 4px 3px rgb(0 0 0 / 34%);
@@ -62,14 +62,21 @@
         margin-bottom: 1rem;
     }
 
-    .featured-grid .featured-grid-item .featured-body .arrivals-menu li a{
+    .featured-body .arrivals-menu li button{
         color: black;
         font-size: 12px;
-    }
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }   
 
-        .featured-grid .featured-grid-item .featured-body .arrivals-menu li:hover{
+        .featured-body .arrivals-menu li:hover{
             color: white;
             background-color: #23262A;
+        }
+
+        .featured-body .arrivals-menu li:hover i{
+            color: white;
         }
 
         .featured-grid .featured-grid-item .featured-body .arrivals-menu li:hover i{
@@ -105,34 +112,46 @@
             opacity: 1;
         }
 
-    .featured-grid .featured-grid-item .featured-grid-info{
+     .featured-grid-info{
         text-align: center;
     }
 
-        .featured-grid .featured-grid-item .featured-grid-info h4,
-        .sec-grid-item .sec-grid-info h4,  .category-grid .sec-grid-info h4{
+        .featured-grid-info h4,
+        .sec-grid-info h4, .sec-grid-info h4{
             font-size: 13px;
             font-family: var(--font-Poppins);
             font-weight: var(--font-weight-regular);
             color: #616365;
         }
-        .featured-grid .featured-grid-item .featured-grid-info h3,
-        .sec-grid-item .sec-grid-info h3{
+
+        .featured-grid-info h3,
+        .sec-grid-info h3{
             font-size: 20px;
             font-family: var(--font-Poppins);
             font-weight: var(--font-weight-semi-bold);
             color: #23262A
         }
 
-        .featured-grid .featured-grid-item .featured-grid-info p,
-        .sec-grid-item .sec-grid-info p,  .category-grid .sec-grid-info p{
+        .featured-grid-info p,
+        .sec-grid-info p, .sec-grid-info p{
             font-size: 18px;
             font-family: var(--font-Poppins);
             font-weight: var(--font-weight-semi-bold);
             color: #23262A;
         }
 
-            .featured-grid .featured-grid-item .featured-grid-info i
-            ,.sec-grid-item .sec-grid-info i, .category-grid .sec-grid-info i{
+            .featured-grid-info i,
+            .sec-grid-info i, .category-grid .sec-grid-info i{
                 color: var(--color-theme);
             }
+
+@media screen and (max-width: 768px) {
+    .featured-btn {
+        opacity: 1;
+    }
+
+    .featured-body .arrivals-menu {
+        opacity: 1;
+        right: 12px;
+    }
+}

@@ -20,7 +20,7 @@ const Home = () => {
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      <ProductModelGird />
+      <ProductModelGird title="Featured Products" />
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />

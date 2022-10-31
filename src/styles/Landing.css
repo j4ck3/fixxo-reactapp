@@ -34,3 +34,21 @@
         .img-container img:last-child{
             margin-right: -100px;
         }
+
+    @media screen and (max-width: 1250px){
+        .img-container #img-container-2 {
+            display: none;
+        }
+        
+    }
+
+
+    @media screen and (max-width: 768px){    
+        .text-container .hero-text {
+            font-size: 42px;
+        }
+    
+        .img-container #img-container-1 {
+            display: none;
+        }
+    }

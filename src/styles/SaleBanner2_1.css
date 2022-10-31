@@ -31,3 +31,13 @@
     background-repeat: no-repeat;
     background-color: #E9E9E9;
 }
+
+@media screen and (max-width: 768px){    
+    .arrivals-grid{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 460px);
+    } 
+    
+        .arrivals-grid-item-1 { grid-area: 1 / 1 / 2 / 2; }
+        .arrivals-grid-item-2 { grid-area: 2 / 1 / 3 / 2; }
+}

@@ -54,3 +54,19 @@
             background-color: var(--color-gray-5);
             flex-basis: 50%;
         }
+
+        @media screen and (max-width: 768px){    
+            .our-specality-container {
+                height: auto;
+            }
+                .our-specality-body {
+                    flex-direction: column;
+                }
+                    .our-specality-item {
+                        width: 100%;
+                    }
+            
+                    .our-specality-body:last-child {
+                        padding-bottom: 2rem;
+                    }            
+        }
