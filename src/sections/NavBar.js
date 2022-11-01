@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import MenuAction from '../components/MenuAction'
 
 const NavBar = () => {
 
@@ -24,10 +25,10 @@ const NavBar = () => {
                         <li><NavLink to="/contact" end>Contact</NavLink></li>
                     </ul>
                     <ul className="meny-button d-flex">
-                        <li><NavLink to="#" end><i className="fa-solid fa-search" ></i></NavLink></li>
-                        <li><NavLink to="#" end><i className="fa-solid fa-shuffle"></i></NavLink></li>
-                        <li className="position-relative"><NavLink  to="#" end> <i className="fa-solid fa-heart"></i><span id="counter-1">6</span></NavLink></li>
-                        <li className="position-relative"><NavLink  to="#" end> <i className="fa-solid fa-bag-shopping"></i><span id="counter-2">9</span></NavLink></li>
+                        <MenuAction linkAdress="/" faIcon="fa-solid fa-search"  />
+                        <MenuAction linkAdress="/compare" faIcon="fa-solid fa-shuffle" />
+                        <MenuAction linkAdress="/wishlist" faIcon="fa-solid fa-heart" qty={4} />
+                        <MenuAction linkAdress="/cart" faIcon="fa-solid fa-bag-shopping" qty={9} />
                     </ul>
                     <div onClick={toggleMenu} className="meny-btn">
                         <i className={`fa-solid fa-bars ${ showMenu ? "d-none" : ""}`}></i>

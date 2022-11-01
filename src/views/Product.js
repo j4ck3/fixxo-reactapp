@@ -208,7 +208,7 @@ const Product = () => {
 
 
 
-    <RelatedProducts />
+    <RelatedProducts title="Related Products" />
     <Footer />
     </>
   )
