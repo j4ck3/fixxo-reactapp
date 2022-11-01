@@ -147,7 +147,7 @@
         text-align: center;
     }
   
-        input {
+/*         input {
             display: none;  
         }
         
@@ -160,11 +160,11 @@
         }
 
         input[type=number] { 
-            /* -moz-appearance: textfield; */
-            /* appearance: textfield; */
+            -moz-appearance: textfield;
+            appearance: textfield;
             margin: 0; 
         }
-
+ */
     .spinner-button {
         font-size: 16;
         position: absolute;

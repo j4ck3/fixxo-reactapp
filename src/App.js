@@ -5,6 +5,9 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
 import Product from './views/Product';
+import Cart from './views/Cart';
+import Wishlist from './views/Wishlist';
+import Compare from './views/Compare';
 
 
 
@@ -17,6 +20,9 @@ function App() {
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Categories' element={<Categories /> } />
         <Route path='/Product' element={<Product /> } />
+        <Route path='/Cart' element={<Cart /> } />
+        <Route path='/Wishlist' element={<Wishlist /> } />
+        <Route path='/Compare' element={<Compare /> } />
       </Routes>
     </BrowserRouter>
   );
