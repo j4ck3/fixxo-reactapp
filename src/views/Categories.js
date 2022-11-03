@@ -8,6 +8,7 @@ const Categories = () => {
   return (
     <>
       <NavBar />
+      <h1>Categories</h1>
       <Footer />
     </>
 

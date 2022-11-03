@@ -11,37 +11,6 @@
         margin: 0;
     }
 
-    .breadcrumb {
-        list-style: none;
-    }
-
-    .breadcrumb li {
-        font-size: var(--font-size-16);
-        font-weight: var(--font-weight-regular);
-        color: black;
-        display: inline;
-        font-size: 18px;
-        letter-spacing: 1px;
-    }
-
-        .breadcrumb li+li:before {
-            padding: 8px;
-            color: black;
-            content: "➜";
-        }
-        
-        .breadcrumb .home a{
-            color: black;
-            text-decoration: none;
-        }
-        .breadcrumb .home {
-            transition: all .2s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-            .breadcrumb .home:hover {
-                transform: translateY(-3px);
-                color: var(--color-theme);
-            }
-
 #main-image {
     width: 270px; 
 }

@@ -9,9 +9,42 @@
 @import './styles/SaleBanner1_1.css';
 @import './styles/ProductActions.css';
 @import './styles/BigBannerModel.css';
+@import './styles/SaleBanner1_1.css';
 @import './styles/SaleBanner1.css';
 @import './styles/ProductModelCategory.css';
 @import './styles/SalesPoints.css';
+.breadcrumb {
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.breadcrumb li {
+  font-family: var(--font-Poppins);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  display: inline;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.breadcrumb .home + li:before {
+  padding: 8px;
+  color: black;
+  content: "❯";
+}
+.breadcrumb .home {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.breadcrumb .home:hover {
+  transform: translateY(-3px);
+}
+.breadcrumb .home i {
+  margin-right: 5px;
+}
+.breadcrumb .current-page {
+  color: #ff7373;
+}
+
 .contact-form {
   margin: 5rem 0;
 }
@@ -78,25 +111,4 @@
   .contact-form form .contact-btn {
     width: 200px;
   }
-}
-.breadcrumb {
-  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.breadcrumb li {
-  font-family: var(--font-Poppins);
-  font-size: var(--font-size-16);
-  font-weight: var(--font-weight-regular);
-  color: black;
-  display: inline;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.breadcrumb li + li:before {
-  padding: 8px;
-  color: black;
-  content: "❯";
-}
-.breadcrumb .home:hover {
-  transform: translateY(-3px);
-  color: var(--color-theme);
 }/*# sourceMappingURL=App.css.map */

@@ -8,7 +8,6 @@
 
     .category-header {
         font-size: 20px;
-        font-family: var(--font-Poppins);
         font-weight: var(--font-weight-bold);
         display: flex;
         align-items: flex-end;
