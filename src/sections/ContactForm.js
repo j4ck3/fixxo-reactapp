@@ -9,37 +9,33 @@ const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false)
   const [SubmitFailed, setSubmitFailed] = useState(false)
 
-  const [inputErrorName, setInputErrorName] = useState(false)
-  const [inputErrorEmail, setInputErrorEmail] = useState(false)
-  const [inputErrorcomments, setInputErrorcomments] = useState(false)
+  const handleChange = (e) => {
+    const {id, value} = e.target
+    setContactForm({...contactForm, [id]: value})
+    setFormErrors(validate(contactForm))
+  }
 
   const validate = (values) => {
     const errors = {}
-    const regex_email = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const regex_email = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    const regex_name = /^[A-Za-z]{1,30}$/
 
     //name
-    if (!values.name) {
-      errors.name = 'You must enter a Name'
-      setInputErrorName(true) 
-      } else if (values.name.length < 2){
-          errors.name = 'Name must be at least 2 character long'
-          setInputErrorName(true) 
-        } else setInputErrorName(false) 
+      if (values.name.length <= 1)
+        errors.name = 'Name must be at least two character long'
+        else if (!regex_name.test(values.name))
+          errors.name = 'Name can only contain only letters'
 
     //email
-    if (!regex_email.test(values.email)){
+    if (!regex_email.test(values.email))
       errors.email = 'You must enter a valid Email Adress'
-      setInputErrorEmail(true) 
-    } else setInputErrorEmail(false)
+    
 
     //comments
-    if (!values.comments) {
-      errors.comments = 'You must enter a Comment'
-      setInputErrorcomments(true) 
-      } else if (values.comments.length < 5)
-        errors.comments = 'Comment must be at least 5 characters long'
-        else setInputErrorcomments(false) 
-        
+    if (values.comments.length <= 4) 
+      errors.comments = 'Comment must be at least five characters long'
+        else if (values.comments.length >= 2000)
+        errors.comments = 'Comment cannot exceed 2000 characters'
 
     if (Object.keys(errors).length === 0)
       setCanSubmit(true)
@@ -49,18 +45,13 @@ const ContactForm = () => {
     return errors;
   }
 
-  const handleChange = (e) => {
-    const {id, value} = e.target
-    setContactForm({...contactForm, [id]: value})
-    setFormErrors(validate(contactForm))
 
-  }
 
   const handleSubmit = (e) => {
       e.preventDefault()
       setFormErrors(validate(contactForm))
 
-      if (Object.keys(formErrors).length === 0) {
+      if (canSubmit === true) {
         let json = JSON.stringify(contactForm)
         fetch ('https://win22-webapi.azurewebsites.net/api/contactform', {
           method: 'post',
@@ -71,6 +62,7 @@ const ContactForm = () => {
         .then(res => {
         if (res.status === 200) {
           setSubmitted(true)
+          setSubmitFailed(false)
           contactForm.name = ""
           contactForm.email = ""
           contactForm.comments = ""
@@ -79,7 +71,6 @@ const ContactForm = () => {
         else {
           setSubmitted(false)
           setSubmitFailed(true)
-
         }})
       }
   }
@@ -108,15 +99,15 @@ const ContactForm = () => {
         }
           <form noValidate onSubmit={handleSubmit}>
             <div>
-              <input className={`${ inputErrorName ? "error" : ""}`} id='name' type='text' placeholder='Your Name' value={contactForm.name} onChange={handleChange}/>
+              <input className={`${ formErrors.name ? "error" : ""}`} id='name' type='text' placeholder='Your Name' value={contactForm.name} onChange={handleChange} onKeyUp={handleChange}/>
               <div className='error-message'>{formErrors.name}</div>
             </div>
             <div>
-              <input className={`${ inputErrorEmail ? "error" : ""}`} id='email' type='email' autoComplete='off' placeholder='Your Email Adress' onBlur={handleChange} value={contactForm.email} onChange={handleChange} />
+              <input className={`${ formErrors.email ? "error" : ""}`} id='email' type='email' autoComplete='off' placeholder='Your Email Adress' value={contactForm.email} onChange={handleChange} onKeyUp={handleChange}/>
               <div className='error-message'>{formErrors.email}</div>
             </div>
             <div className='textarea' >
-              <textarea className={`${ inputErrorcomments ? "error" : ""}`} id='comments' type='text' placeholder='Comments' value={contactForm.comments} onChange={handleChange} /* onKeyUp={validate} */ />
+              <textarea className={`${ formErrors.comments ? "error" : ""}`} id='comments' type='text' placeholder='Comments' value={contactForm.comments} onChange={handleChange} onKeyUp={handleChange} />
               <div className='error-message'>{formErrors.comments}</div>
             </div>
             <div>

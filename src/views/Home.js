@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import NavBar from '../sections/NavBar';
 import Landing from '../sections/home/Landing';
 
@@ -13,16 +13,18 @@ import ProductModelCategory from '../sections/home/Product_model_category';
 import SalesPoint from '../sections/home/SalesPoint';
 
 import Footer from '../sections/Footer';
+import { ProductsContext } from '../contexts/context'
 
 
 const Home = () => {
+  const productsContext = useContext(ProductsContext) 
   return (
     <>
     <React.StrictMode>
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      <ProductModelGird title="Featured Products" />
+      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} />
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />

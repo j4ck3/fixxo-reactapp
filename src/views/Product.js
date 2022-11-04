@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import NavBar from '../sections/NavBar';
 import Footer from '../sections/Footer';
 import SaleNote from '../sections/SaleNote';
 import BreadCrumb from '../sections/BreadCrumb';
-/* import RelatedProducts from '../sections/RelatedProducts'; */
 import product_img_1 from '../imgs/home-container-1.svg'
 import product_img_2 from '../imgs/home-container-2.svg'
-
+import ProductModelGird from '../sections/Product_model_gird';
+import { ProductsContext } from '../contexts/context'
 /* ------------Change image on hover------------------*/
 /* function change_image(image){
     const container = document.getElementById("main-image");
@@ -60,6 +60,8 @@ const toggleColapse = (i) => {
  */
 
 const Product = () => {
+
+  const productsContext = useContext(ProductsContext) 
   return (
     <>
     <NavBar />
@@ -211,7 +213,7 @@ const Product = () => {
 
 
 
-{/*     <RelatedProducts title="Related Products"  /> */}
+    <ProductModelGird title="Related Products" items={productsContext.allProducts} />
     <Footer />
     </>
   )

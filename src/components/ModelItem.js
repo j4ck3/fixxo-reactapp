@@ -7,7 +7,7 @@ const model_item = ({item}) => {
         <div className="col">
             <div className='card'>
                 <div className="featured-body">
-                    <img className='model-item-img' src={item.imgUrl} alt={item.name} />
+                    <img className='model-item-img' src={item.imageName} alt={item.name} />
                     <ul className="arrivals-menu">
                         <li><button href="#"><i className="fa-solid fa-heart"></i></button></li>
                         <li><button href="#"><i className="fa-solid fa-shuffle"></i></button></li>
@@ -23,7 +23,7 @@ const model_item = ({item}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <p>{item.price}</p>
+                    <p>${item.price}</p>
                 </div>
             </div>
         </div>
