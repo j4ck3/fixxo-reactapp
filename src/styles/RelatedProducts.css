@@ -19,7 +19,7 @@
     margin: 1rem;
 }
 
-.featured-body .arrivals-menu{
+.arrivals-menu{
     list-style: none;
     z-index: 2;
     position: absolute;
@@ -38,7 +38,11 @@
     right: 12px;
 }
 
-.featured-body .arrivals-menu li{
+.category-grid-body:hover .arrivals-menu{
+    right: 12px;
+}
+
+.featured-body .arrivals-menu li, .category-grid-body .arrivals-menu li{   
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     box-shadow: 0px 0px 4px 3px rgb(0 0 0 / 34%);
@@ -46,7 +50,7 @@
     margin-bottom: 1rem;
 }
 
-.featured-body .arrivals-menu li button{
+.featured-body .arrivals-menu li button, .category-grid-body .arrivals-menu li button{
     color: black;
     font-size: 12px;
     border: none;
@@ -54,16 +58,12 @@
     padding: 0;
 }   
 
-    .featured-body .arrivals-menu li:hover{
+    .arrivals-menu li:hover{
         color: white;
         background-color: #23262A;
     }
 
-    .featured-body .arrivals-menu li:hover i{
-        color: white;
-    }
-
-    .featured-grid .featured-grid-item .featured-body .arrivals-menu li:hover i{
+    .arrivals-menu li:hover i{
         color: white;
     }
 
@@ -90,43 +90,35 @@
 } 
 
     .featured-body:hover .featured-btn,
-    .category-grid-body:hover .featured-btn, 
-    .sec-grid-body:hover .featured-btn
+    .category-grid-body:hover .featured-btn
     {
         color: white;
         opacity: 1;
     }
 
-    .featured-grid-info{
-    text-align: center;
-}
-
     .featured-grid-info h4,
-    .sec-grid-info h4, .sec-grid-info h4{
+    .sec-grid-info h4{
         font-size: 13px;
         font-weight: var(--font-weight-regular);
         color: #616365;
         margin: 10px 0;
     }
 
-    .featured-grid-info h3,
-    .sec-grid-info h3{
+    .featured-grid-info h3{
         font-size: 20px;
         font-weight: var(--font-weight-semi-bold);
         color: #23262A;
         margin-top: 10px;
     }
 
-    .featured-grid-info p,
-    .sec-grid-info p, .sec-grid-info p{
+    .featured-grid-info p, .sec-grid-info p{
         font-size: 18px;
         font-weight: var(--font-weight-semi-bold);
         color: #23262A;
         margin-top: 10px;
     }
 
-        .featured-grid-info i,
-        .sec-grid-info i, .category-grid .sec-grid-info i{
+        .featured-grid-info i{
             color: var(--color-theme);
         }
 
@@ -135,7 +127,7 @@
         opacity: 1;
     }
 
-    .featured-body .arrivals-menu {
+    .arrivals-menu {
         opacity: 1;
         right: 12px;
     }

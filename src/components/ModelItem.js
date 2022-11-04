@@ -6,7 +6,7 @@ const model_item = ({item}) => {
     <>
         <div className="col">
             <div className='card'>
-                <div className="featured-body">
+                <div className="category-grid-body w-100">
                     <img className='model-item-img' src={item.imageName} alt={item.name} />
                     <ul className="arrivals-menu">
                         <li><button href="#"><i className="fa-solid fa-heart"></i></button></li>

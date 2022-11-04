@@ -116,24 +116,24 @@
         text-align: center;
     }
   
-/*         input {
+        .product-size-radio {
             display: none;  
         }
         
-        input:checked + .product-input-size-text{
+        .product-size-radio:checked + .product-input-size-text{
             outline: 1px solid black;
         }
             
-        input::-webkit-inner-spin-button {
+        .product-size-radio::-webkit-inner-spin-button {
             display: none;
         }
 
-        input[type=number] { 
+        .product-size-radio[type=number] { 
             -moz-appearance: textfield;
             appearance: textfield;
             margin: 0; 
         }
- */
+
     .spinner-button {
         font-size: 16;
         position: absolute;

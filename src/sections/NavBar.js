@@ -21,7 +21,7 @@ const NavBar = () => {
                     <ul className={`meny-link-body ${ showMenu ? "d-flex" : ""}`}>
                         <li><NavLink to="/" end>Home</NavLink></li>
                         <li><NavLink to="/categories" end>Categories</NavLink></li>
-                        <li><NavLink to="/product" end>Product</NavLink></li>
+                        <li><NavLink to="/product" end>Products</NavLink></li>
                         <li><NavLink to="/contact" end>Contact</NavLink></li>
                     </ul>
                     <ul className="meny-button d-flex">

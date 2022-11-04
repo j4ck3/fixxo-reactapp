@@ -1,12 +1,16 @@
 import React, {useContext} from 'react'
-import NavBar from '../sections/NavBar';
-import Footer from '../sections/Footer';
-import SaleNote from '../sections/SaleNote';
-import BreadCrumb from '../sections/BreadCrumb';
-import product_img_1 from '../imgs/home-container-1.svg'
-import product_img_2 from '../imgs/home-container-2.svg'
-import ProductModelGird from '../sections/Product_model_gird';
+import { TabPanel, useTabs } from 'react-headless-tabs'
+import { TabSelector } from '../views/TabSelector.tsx'
 import { ProductsContext } from '../contexts/context'
+
+import NavBar from '../sections/NavBar'
+import Footer from '../sections/Footer'
+import SaleNote from '../sections/SaleNote'
+import BreadCrumb from '../sections/BreadCrumb'
+import product_img_1 from '../sections/home/imgs/home-container-1.svg'
+import product_img_2 from '../sections/home/imgs/home-container-2.svg'
+import ProductModelGird from '../sections/Product_model_gird'
+
 /* ------------Change image on hover------------------*/
 /* function change_image(image){
     const container = document.getElementById("main-image");
@@ -60,6 +64,12 @@ const toggleColapse = (i) => {
  */
 
 const Product = () => {
+    const [selectedTab, setSelectedTab] = useTabs([
+        'Description',
+        'Additional',
+        'Shopping-Returns',
+        'Reviews',
+      ]);
 
   const productsContext = useContext(ProductsContext) 
   return (
@@ -107,19 +117,19 @@ const Product = () => {
                 <div className="product-input-container">
                     <label className="label-product">Size: </label>
                     <label className="product-input-size">
-                        <input type="radio" name="size"  value="S"  />
+                        <input className='product-size-radio' type="radio" name="size"  value="S"  />
                         <span className="product-input-size-text">S</span>
                     </label>
                     <label className="product-input-size">
-                        <input type="radio" name="size"  value="M" defaultChecked />
+                        <input className='product-size-radio' type="radio" name="size"  value="M" defaultChecked />
                         <span className="product-input-size-text">M</span>
                     </label>
                     <label className="product-input-size">
-                        <input type="radio" name="size" value="L" />
+                        <input className='product-size-radio' type="radio" name="size" value="L" />
                         <span className="product-input-size-text">L</span>
                     </label>
                     <label className="product-input-size">
-                        <input type="radio" name="size"  value="XL" />
+                        <input className='product-size-radio' type="radio" name="size"  value="XL" />
                         <span className="product-input-size-text">XL</span>
                     </label>
                 </div>
@@ -159,57 +169,46 @@ const Product = () => {
     </div>
 </div>
 
-
-<div className="container-xxl">
-    <p>
-        <div className="colapse-container">
-            <a id="productColapse" className="product-colapse" /* onclick={toggleColapse(0)}  */data-bs-toggle="collapse" href="#Description" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Description
-            </a>
-            <a id="productColapse" className="product-colapse" /* onclick={toggleColapse(1)} */ data-bs-toggle="collapse" href="#Additional" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Additional
-            </a>
-            <a id="productColapse" className="product-colapse" /* onclick={toggleColapse(2)} */ data-bs-toggle="collapse" href="#Shopping" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Shopping & Returns
-            </a>
-            <a id="productColapse" className="product-colapse" /* onclick={toggleColapse(3)} */ data-bs-toggle="collapse" href="#Reviews" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Reviews
-            </a>
-        </div>
-    </p>
-    
-    <div className="collapse" id="Description">
-        <div className="card card-body">
-            <span>
-                Way extensive and dejection get delivered deficient sincerity gentleman age. 
-                Too end instrument possession contrasted motionless. Calling offence six joy feeling.
-                Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery
-                    incommode earnestly no he commanded if. Put still any about manor heard.<br />
-                    * Village did removed enjoyed explain nor ham saw calling talking.<br />
-                    * Securing as informed declared or margaret.<br />
-                    * Joy horrible moreover man feelings own shy.<br />
-                    On even feet time have an no at. Relation so in confined smallest children unpacked delicate. 
-                    Why sir end believe uncivil respect. Always get adieus nature day course for common. My little 
-                    garret repair to desire he esteem. 
-            </span>
-        </div>    
-    </div>
-    <div className="collapse" id="Additional">
-        <div className="card card-body">
-            <span>Additional</span>
-        </div>
-    </div>
-    <div className="collapse" id="Shopping">
-        <div className="card card-body">
-            <span>Shopping & Returns</span>
-        </div>
-    </div>
-    <div className="collapse" id="Reviews">
-        <div className="card card-body">
-            <span>Reviews</span>
-        </div>
-    </div>
+<div className='container-xxl'>
+<nav className="flex border-b border-gray-300">
+        <TabSelector
+          isActive={selectedTab === 'Description'}
+          onClick={() => setSelectedTab('Description')}
+        >
+        Description
+        </TabSelector>
+        <TabSelector
+          isActive={selectedTab === 'Additional'}
+          onClick={() => setSelectedTab('Additional')}
+        >
+          Additional
+        </TabSelector>
+        <TabSelector
+          isActive={selectedTab === 'Shopping-Returns'}
+          onClick={() => setSelectedTab('Shopping-Returns')}
+        >
+          Shopping & Returns
+        </TabSelector>
+        <TabSelector
+          isActive={selectedTab === 'Reviews'}
+          onClick={() => setSelectedTab('Reviews')}
+        >
+          Reviews
+        </TabSelector>
+      </nav>
+      <div className="p-4">
+        <TabPanel hidden={selectedTab !== "Description"}>Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard. 
+            * Village did removed enjoyed explain nor ham saw calling talking.
+            * Securing as informed declared or margaret.
+            * Joy horrible moreover man feelings own shy.
+            On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem.
+        </TabPanel>
+        <TabPanel hidden={selectedTab !== "Additional"}>Additional</TabPanel>
+        <TabPanel hidden={selectedTab !== "Shopping-Returns"}>Shopping & Returns</TabPanel>
+        <TabPanel hidden={selectedTab !== "Reviews"}>Reviews</TabPanel>
+      </div>
 </div>
+
 
 
 
