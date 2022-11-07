@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import NavBar from '../sections/NavBar';
 import Landing from '../sections/home/Landing';
 
@@ -18,13 +18,22 @@ import { ProductsContext } from '../contexts/context'
 
 const Home = () => {
   const productsContext = useContext(ProductsContext) 
+
+
+  const [cart, setCart] = useState ([])
+  
+  const handleClick = (items) => {
+    setCart([...cart, items])
+    console.log(items)
+  }
+  
   return (
     <>
     <React.StrictMode>
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} />
+      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} />
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />
