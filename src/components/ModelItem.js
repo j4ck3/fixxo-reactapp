@@ -1,7 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 
-const model_item = ({item, handleClick}) => {
+const model_item = ({item}) => {
+    const { incrementQuantity } = useShoppingCart()
   return (
     <>
         <div className="col">
@@ -11,9 +14,9 @@ const model_item = ({item, handleClick}) => {
                     <ul className='arrivals-menu'>
                         <li><button href="#"><i className="fa-solid fa-heart"></i></button></li>
                         <li><button href="#"><i className="fa-solid fa-shuffle"></i></button></li>
-                        <li><button onClick={() => handleClick(item)} ><i className="fa-solid fa-cart-shopping"></i></button></li>
+                        <li><button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} ><i className="fa-solid fa-cart-shopping"></i></button></li>
                     </ul>
-                    <a className="featured-btn" href="#">quick view</a>
+                    <NavLink to={`/product/${item.articleNumber}`} className="featured-btn">quick view</NavLink>
                 </div>
                 <div className="featured-grid-info">
                     <h4>{item.category}</h4>

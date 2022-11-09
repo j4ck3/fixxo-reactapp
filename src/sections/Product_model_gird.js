@@ -3,7 +3,7 @@ import ModelItem from '../components/ModelItem'
 
 
 
-const Product_model_gird = ({title, items = [], handleClick}) => {
+const Product_model_gird = ({title, items}) => {
 
   return (
     <>
@@ -11,7 +11,7 @@ const Product_model_gird = ({title, items = [], handleClick}) => {
         <h1 className="featured-title">{title}</h1>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
           {
-            items.map(products => <ModelItem key={products.articleNumber} item={products} handleClick={handleClick}/>)
+            items.map(products => <ModelItem key={products.articleNumber} item={products}/>)
           }
         </div>
     </div>

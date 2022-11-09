@@ -1,7 +1,9 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { TabPanel, useTabs } from 'react-headless-tabs'
 import { TabSelector } from '../views/TabSelector.tsx'
 import { ProductsContext } from '../contexts/context'
+import { useParams } from 'react-router-dom'
+/* import { useProductsContext } from '../contexts/context' */
 
 import NavBar from '../sections/NavBar'
 import Footer from '../sections/Footer'
@@ -64,6 +66,14 @@ const toggleColapse = (i) => {
  */
 
 const Product = () => {
+
+    const {id} = useParams()
+/*     const {product, getProduct} = useProductsContext()
+    useEffect(() => {
+        getProduct(id)
+    }, []) */
+
+
     const [selectedTab, setSelectedTab] = useTabs([
         'Description',
         'Additional',
@@ -71,7 +81,14 @@ const Product = () => {
         'Reviews',
       ]);
 
+    const handleClick = (item) => {
+    setCart([...cart, item])
+    console.log(item)
+    }
+    const [cart, setCart] = useState ([])
+
   const productsContext = useContext(ProductsContext) 
+
   return (
     <>
     <NavBar />
@@ -83,7 +100,7 @@ const Product = () => {
     <div className="row mt-5 product-container">
         <div className="col-md-6">
             <div className="images">
-                <div className="text-center mb-4"><img id="main-image" src={product_img_1} alt="product" /></div>
+                <div className="text-center mb-4"><img id="main-image" /* src={item.imageName} */ alt="product" /></div>
                     <div className="text-center"> <img className="sec-image" /* onmousehover={change_image(this)} */ src={product_img_1} alt="product" />
                                                   <img className="sec-image" /* onmousehover={change_image(this)} */ src={product_img_2} alt="product" />
                     </div>
@@ -91,7 +108,7 @@ const Product = () => {
         </div>
         <form className='col'>
         <div className="col-2 w-100">
-            <h1>Modern Black Blouse</h1>
+            <h1>{/* {item.name} */}</h1>
             <h3 className="text-uppercase">SKU: 12345670 BRAND: The Northland</h3>
             <div className="product-rating mt-3">
                 <i className="fa-solid fa-star"></i>
@@ -212,7 +229,7 @@ const Product = () => {
 
 
 
-    <ProductModelGird title="Related Products" items={productsContext.allProducts} />
+    <ProductModelGird title="Related Products" items={productsContext.allProducts} handleClick={handleClick} />
     <Footer />
     </>
   )

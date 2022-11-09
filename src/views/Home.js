@@ -16,15 +16,16 @@ import Footer from '../sections/Footer';
 import { ProductsContext } from '../contexts/context'
 
 
+
 const Home = () => {
   const productsContext = useContext(ProductsContext) 
 
 
   const [cart, setCart] = useState ([])
   
-  const handleClick = (items) => {
-    setCart([...cart, items])
-    console.log(items)
+  const handleClick = (item) => {
+    setCart([...cart, item])
+    console.log(item)
   }
   
   return (
@@ -33,7 +34,7 @@ const Home = () => {
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} />
+      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} cart={cart} />
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />

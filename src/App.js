@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProductsContext } from './contexts/context'
+import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
 
 import './App.css'
 import Contact from './views/Contact';
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ShoppingCartProvider>
       <ProductsContext.Provider value={products}>
       <Routes>
         <Route path='/' element={<Home />} />
@@ -46,10 +48,10 @@ function App() {
         <Route path='/Cart' element={<Cart /> } />
         <Route path='/Wishlist' element={<Wishlist /> } />
         <Route path='/Compare' element={<Compare /> } />
-
         <Route path='*' element={<NotFound />} />
       </Routes>
       </ProductsContext.Provider>
+      </ShoppingCartProvider>
     </BrowserRouter>
   );
 }
