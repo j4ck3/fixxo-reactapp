@@ -1,10 +1,13 @@
 //Global
+@import './styles/Variables';
 @import './styles/Base.css';
 
 //Views
 @import './styles/Product.css'; 
 
 
+//components 
+@import './styles/ShoppingCart';
 //Sections
 
 @import './styles/NavBar.css';
@@ -21,7 +24,7 @@
 @import './styles/ProductModelCategory.css';
 @import './styles/SalesPoints.css';
 
-@import './styles/Variables';
+
 @import './styles/BreadCrumb';
 @import './styles/ContactForm';
 
