@@ -17,6 +17,7 @@ const ShoppingCart = () => {
             cartItems.map(item => (<ShoppingCartItem key={item.articleNumber} item={item} />))
           }
         </div>
+        <button className='checkout-btn'>Proceed to Checkout</button> 
       </div>
     </>
   )

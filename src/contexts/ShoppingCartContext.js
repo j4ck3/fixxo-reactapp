@@ -47,13 +47,16 @@ export const ShoppingCartProvider = ({children}) => {
                 return items.map(item => {
                     if (item.articleNumber === articleNumber){
                         return { ...item, quantity: item.quantity - 1}
+                    }else {
+                        return item
                     }
                 })
             }
         })
     }
     
-    const removeItem = (articleNumber) => {
+    const removeItem = (cartItem) => {
+        const  {articleNumber} = cartItem
         setCartItems(items => {
             return items.filter(item => item.articleNumber !== articleNumber)
         })

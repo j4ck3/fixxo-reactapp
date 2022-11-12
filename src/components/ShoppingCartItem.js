@@ -15,12 +15,13 @@ const ShoppingCartItem = ({item}) => {
           <button className='cart-btn' onClick={() => decrementQuantity(item)}><i class="fa-solid fa-minus"></i></button>
           <span>{item.quantity}</span>
           <button className='cart-btn' onClick={() => incrementQuantity(item)}><i class="fa-solid fa-plus"></i></button>
+          <button className='cart-btn' onClick={() => removeItem(item)}><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>
       <div className='item-price'>
         <div>${item.product.price * item.quantity}</div>
-        <button className='cart-btn' onClick={() => removeItem(item.articleNumebr)}><i class="fa-solid fa-trash-can"></i></button>
       </div>
+
     </div>
   )
 }

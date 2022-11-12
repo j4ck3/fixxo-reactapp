@@ -229,7 +229,7 @@ const Product = () => {
 
 
 
-    <ProductModelGird title="Related Products" items={productsContext.allProducts} handleClick={handleClick} />
+{/*     <ProductModelGird title="Related Products" items={productsContext.allProducts} /> */}
     <Footer />
     </>
   )

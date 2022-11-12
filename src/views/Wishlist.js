@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../sections/NavBar'
 import Footer from '../sections/Footer'
+import BreadCrumb from '../sections/BreadCrumb'
 
 
 
@@ -8,7 +9,7 @@ const Wishlist = () => {
   return (
     <>
       <NavBar />
-      <h1>Wishlist</h1>
+      <BreadCrumb currentPage='Whishlist'/> 
       <Footer />
     </>
 

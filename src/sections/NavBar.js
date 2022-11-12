@@ -31,7 +31,6 @@ const toggleMenu = () => {
                         <MenuAction linkAdress='/' faIcon='fa-solid fa-search'  />
                         <MenuAction linkAdress='/compare' faIcon='fa-solid fa-shuffle' />
                         <MenuAction linkAdress='/wishlist' faIcon='fa-solid fa-heart' qty={4} />
-{/*                         <MenuAction linkAdress='/cart' faIcon='fa-solid fa-bag-shopping' qty={9} /> */}
                         <button className='meny-button-cart position-relative' type='button' data-bs-toggle='offcanvas' data-bs-target='#shoppingCart' aria-controls='shoppingCart'>
                             <i className='fa-solid fa-bag-shopping'></i>
                             <span id="counter-1">{cartQuantity}</span>

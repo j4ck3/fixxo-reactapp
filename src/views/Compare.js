@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../sections/NavBar'
 import Footer from '../sections/Footer'
+import BreadCrumb from '../sections/BreadCrumb'
 
 
 
@@ -8,7 +9,7 @@ const Compare = () => {
   return (
     <>
       <NavBar />
-      <h1>Compare</h1>
+      <BreadCrumb currentPage='Compare'/> 
       <Footer />
     </>
 
