@@ -34,7 +34,7 @@ const Home = () => {
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} cart={cart} />
+      {/* <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} cart={cart} /> */}
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />

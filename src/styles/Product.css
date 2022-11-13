@@ -106,6 +106,7 @@
   }
 
     .product-input-qty {
+        -webkit-appearance: none;
         width: 50px;
         height: 43px;
         display: flex;
@@ -129,8 +130,6 @@
         }
 
         .product-size-radio[type=number] { 
-            -moz-appearance: textfield;
-            appearance: textfield;
             margin: 0; 
         }
 
