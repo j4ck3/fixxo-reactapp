@@ -34,7 +34,7 @@ function App() {
     }
     fetchFeaturedProducts()
 
-  }, [])
+  }, [setProducts])
 
   return (
     <BrowserRouter>

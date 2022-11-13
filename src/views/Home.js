@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import NavBar from '../sections/NavBar';
 import Landing from '../sections/home/Landing';
 
@@ -26,7 +26,7 @@ const Home = () => {
       <NavBar />
       <Landing />
       <SaleBanner21 />
-      {/* <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} handleClick={handleClick} cart={cart} /> */}
+      <ProductModelGird title="Featured Products" items={productsContext.featuredProducts} />
       <SaleBanner11 />
       <ProductActions />
       <BigBannerModel />

@@ -1,9 +1,8 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { TabPanel, useTabs } from 'react-headless-tabs'
 import { TabSelector } from '../views/TabSelector.tsx'
-import { ProductsContext } from '../contexts/context'
+import model_1 from '../sections/home/imgs/home-container-1.svg'
 /* import { useParams } from 'react-router-dom' */
-/* import { useProductsContext } from '../contexts/context' */
 import NavBar from '../sections/NavBar'
 import Footer from '../sections/Footer'
 import SaleNote from '../sections/SaleNote'
@@ -12,7 +11,8 @@ import product_img_1 from '../sections/home/imgs/home-container-1.svg'
 import product_img_2 from '../sections/home/imgs/home-container-2.svg'
 import ReadMore from '../components/ReadMore'
 import ProductFormInput from '../components/ProductFormInput'
-
+import ProductModelGird from '../sections/Product_model_gird'
+import { ProductsContext } from '../contexts/context'
 /* ------------Change image on hover------------------*/
 /* function change_image(image){
     const container = document.getElementById("main-image");
@@ -21,6 +21,7 @@ import ProductFormInput from '../components/ProductFormInput'
 
 const Product = () => {
 
+const productsContext = useContext(ProductsContext) 
 
 
 /*     const {id} = useParams() */
@@ -29,9 +30,6 @@ const Product = () => {
         getProduct(id)
     }, []) */
 
-
-
-
     const [selectedTab, setSelectedTab] = useTabs([
         'Description',
         'Additional',
@@ -39,8 +37,6 @@ const Product = () => {
         'Reviews',
       ]);
 
-
-  const productsContext = useContext(ProductsContext) 
 
   return (
     <>
@@ -53,7 +49,7 @@ const Product = () => {
     <div className="row mt-5 product-container">
         <div className="col-md-6">
             <div className="images">
-                <div className="text-center mb-4"><img id="main-image" /* src={item.imageName} */ alt="product" /></div>
+                <div className="text-center mb-4"><img id="main-image" src={model_1} alt="product" /></div>
                     <div className="text-center"> <img className="sec-image" /* onmousehover={change_image(this)} */ src={product_img_1} alt="product" />
                                                   <img className="sec-image" /* onmousehover={change_image(this)} */ src={product_img_2} alt="product" />
                     </div>
@@ -173,7 +169,7 @@ const Product = () => {
 
 
 
-{/*     <ProductModelGird title="Related Products" items={productsContext.allProducts} /> */}
+    <ProductModelGird title="Related Products" items={productsContext.allProducts} />
     <Footer />
     </>
   )
