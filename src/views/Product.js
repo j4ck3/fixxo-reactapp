@@ -10,8 +10,8 @@ import SaleNote from '../sections/SaleNote'
 import BreadCrumb from '../sections/BreadCrumb'
 import product_img_1 from '../sections/home/imgs/home-container-1.svg'
 import product_img_2 from '../sections/home/imgs/home-container-2.svg'
-/* import ProductModelGird from '../sections/Product_model_gird' */
 import ReadMore from '../components/ReadMore'
+import ProductFormInput from '../components/ProductFormInput'
 
 /* ------------Change image on hover------------------*/
 /* function change_image(image){
@@ -19,39 +19,10 @@ import ReadMore from '../components/ReadMore'
     container.src = image.src;
 } */
 
-const buttonClickDec = () => {
-    if (i <= 1){}
-    if (i >= 2){
-        qtyInput.value = i;
-        i--;
-
-    }
-} 
+const Product = () => {
 
 
 
-/* -------------produt-colapse------------------*/
-/* const productColapse = document.querySelectorAll('#productColapse');
-const toggleColapse = (i) => {
-    productColapse[i].classList.toggle('active')
-} */
-
-
-const Product = ({form_count = 1}) => {
-
-    const [count, setCount] = useState(form_count)
-
-    const increment = () => {
-        setCount (current => current + 1)
-    }
-
-    const decrement = () => {
-        if (count <= 1 ){}
-        else{
-            setCount (current => current - 1)
-        }
-
-    }
 /*     const {id} = useParams() */
 /*     const {product, getProduct} = useProductsContext()
     useEffect(() => {
@@ -141,15 +112,8 @@ const Product = ({form_count = 1}) => {
                     </select>
                 </div>
 
-                <div className="product-input-container">
-                    <label className="label-product" htmlFor="number">Qty:</label>
-                    <div className="product-input-qty-container d-flex justify-content-center">
-                        <input className="product-input-qty" type="number" value={count} min="1"/>
-                        <div id="inc-button" onClick={() => increment()} className="spinner-button"><i className="fa-solid fa-plus"></i></div>
-                        <div id="dec-button" onClick={() => decrement()}  className="spinner-button"><i className="fa-solid fa-minus"></i></div>
-                    </div>
-                    <button className="button-product" type="submit">ADD TO CART</button>
-                </div>
+
+                <ProductFormInput/>
                 
                 <div className="product-input-container">
                     <label className="label-product">Share:</label>

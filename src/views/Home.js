@@ -19,14 +19,6 @@ import { ProductsContext } from '../contexts/context'
 
 const Home = () => {
   const productsContext = useContext(ProductsContext) 
-
-
-  const [cart, setCart] = useState ([])
-  
-  const handleClick = (item) => {
-    setCart([...cart, item])
-    console.log(item)
-  }
   
   return (
     <>
