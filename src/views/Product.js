@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { TabPanel, useTabs } from 'react-headless-tabs'
 import { TabSelector } from '../views/TabSelector.tsx'
 import model_1 from '../sections/home/imgs/home-container-1.svg'
@@ -10,6 +10,7 @@ import BreadCrumb from '../sections/BreadCrumb'
 import product_img_1 from '../sections/home/imgs/home-container-1.svg'
 import product_img_2 from '../sections/home/imgs/home-container-2.svg'
 import ReadMore from '../components/ReadMore'
+import DropDown from '../components/DropDown'
 import ProductFormInput from '../components/ProductFormInput'
 import ProductModelGird from '../sections/Product_model_gird'
 import { ProductsContext } from '../contexts/context'
@@ -22,7 +23,8 @@ import { ProductsContext } from '../contexts/context'
 const Product = () => {
 
 const productsContext = useContext(ProductsContext) 
-
+ 
+const [selected, setSelected] = useState('Choose an Option')
 
 /*     const {id} = useParams() */
 /*     const {product, getProduct} = useProductsContext()
@@ -100,12 +102,7 @@ const productsContext = useContext(ProductsContext)
 
                 <div className="product-input-container">
                     <label className="label-product" htmlFor="color">Color:</label>
-                    <select id="color">
-                        <option>Choose a Color</option>
-                        <option value="black">Black</option>
-                        <option>Off white</option>
-                        <option>Red</option>
-                    </select>
+                    <DropDown selected={selected} setSelected={setSelected} />
                 </div>
 
 

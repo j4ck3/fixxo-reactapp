@@ -19,7 +19,7 @@ const ProductFormInput = ({form_count = 1}) => {
         <div className="product-input-qty-container d-flex justify-content-center">
             <span className="product-input-qty" data-testid='inputqty'>{count}</span>
             <div id="inc-button" onClick={() => increment()} className="spinner-button" data-testid='inc-button'>+</div>
-            <div id="dec-button" onClick={() => decrement()}  className="spinner-button"><i class="fa-solid fa-minus"></i></div>
+            <div id="dec-button" onClick={() => decrement()}  className="spinner-button">-</div>
         </div>
         <button className="button-product" type="submit">ADD TO CART</button>
      </div>
